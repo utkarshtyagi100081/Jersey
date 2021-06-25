@@ -1,6 +1,7 @@
 plugins {
-    id 'java'
-    apply plugin:'war'
+    id "war"
+    id "java"
+
 }
 
 group 'org.example'
@@ -13,7 +14,10 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.14'
+    compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.26'
+    implementation 'org.glassfish.jersey.containers:jersey-container-jdk-http:2.26'
+    implementation 'org.glassfish.jersey.inject:jersey-hk2:2.26'
+
 
 
 }
