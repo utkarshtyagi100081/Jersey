@@ -1,5 +1,7 @@
 com/jersey/Alien.java
  com.jersey.Alien
+com/jersey/AlienDataStore.java
+ com.jersey.AlienDataStore
 com/jersey/AlienRersources.java
  com.jersey.AlienRersources
 com/jersey/Server.java
