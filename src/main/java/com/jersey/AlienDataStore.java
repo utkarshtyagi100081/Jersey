@@ -32,8 +32,9 @@ public class AlienDataStore {
         return null;
     }
 
-    public void createAlien(Alien a) {
+    public List<Alien> createAlien(Alien a) {
         aliens.add(a);
+        return aliens;
     }
 
     public Alien deleteAlien(int id) {
@@ -44,5 +45,10 @@ public class AlienDataStore {
             }
         }
         return null;
+    }
+
+    public List<Alien> updateAlien(Alien a1,int index) {
+        aliens.set(index,a1);
+        return aliens;
     }
 }

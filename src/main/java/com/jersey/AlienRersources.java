@@ -25,15 +25,25 @@ public class AlienRersources {
     @POST
     @Path("/addAlien")
     @Consumes("Application/json")
-    public Alien createAlien(Alien a1){
-        data.createAlien(a1);
-        return a1;
+    public List<Alien> createAlien(Alien a1){
+        return data.createAlien(a1);
     }
     @DELETE
     @Path("delete/{id}")
-    public Alien updateAlien(@PathParam("id") int id){
+    public Alien deleteAlien(@PathParam("id") int id){
        return data.deleteAlien(id);
 
     }
 
-}
+    @PUT
+    @Path("update/{id}")
+    public List<Alien> updateAlien(Alien a1,@PathParam("id") int id){
+         for (Alien a : data.aliens) {
+             if (a.getId() == id)
+                 return data.updateAlien(a1,data.aliens.indexOf(a));
+         }
+         return data.createAlien(a1);
+        }
+    }
+
+
